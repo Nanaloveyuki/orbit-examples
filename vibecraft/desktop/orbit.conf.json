@@ -1,0 +1,31 @@
+{
+  "schema_version": 2,
+  "app": {
+    "identifier": "dev.orbit.vibecraft",
+    "name": "Orbit Voxel",
+    "version": "0.1.0",
+    "product_name": "Orbit Voxel",
+    "windows": [{
+      "label": "main",
+      "title": "Orbit Voxel",
+      "width": 1280,
+      "height": 800,
+      "entry": "assets/index.html",
+      "visible": true,
+      "resizable": true
+    }]
+  },
+  "bundle": { "icons": [] },
+  "web": { "embedded": {
+    "csp": "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:"
+  }},
+  "build": {},
+  "capabilities": [{
+    "identifier": "game-host",
+    "effect": "allow",
+    "principals": [{ "kind": "window", "identifier": "main" }],
+    "scopes": [],
+    "commands": ["game.host"]
+  }],
+  "plugins": []
+}

@@ -1,0 +1,22 @@
+{
+  "name": "orbit-examples",
+  "private": true,
+  "scripts": {
+    "build:web": "node scripts/build-web.mjs",
+    "generate": "npm run build:web && orbit generate --workspace vibecraft/desktop --config orbit.conf.json",
+    "build": "npm run generate && moon -C vibecraft/desktop build --target native",
+    "start": "npm run generate && orbit run --workspace vibecraft/desktop --config orbit.conf.json",
+    "dev": "npm run build:web && node scripts/serve.mjs",
+    "test": "moon -C vibecraft/game test --target js --deny-warn",
+    "test:web": "playwright test"
+  },
+  "dependencies": {
+    "three": "0.186.0",
+    "lucide": "0.577.0"
+  },
+  "devDependencies": {
+    "@nanaloveyuki/orbit-cli": "0.1.0-alpha.8",
+    "@playwright/test": "1.58.2",
+    "esbuild": "0.25.12"
+  }
+}
