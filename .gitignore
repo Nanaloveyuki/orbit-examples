@@ -1,0 +1,9 @@
+ref/
+_build/
+.mooncakes/
+.repos/
+node_modules/
+tmp/
+vibecraft/desktop/assets/
+vibecraft/desktop/generated_page.mbt
+test-results/

@@ -1,0 +1,46 @@
+:root { color-scheme: dark; font-family: 'Segoe UI', sans-serif; color: #f5f7f4; background: #84bff2; letter-spacing: 0; }
+* { box-sizing: border-box; }
+html, body { width: 100%; height: 100%; margin: 0; overflow: hidden; }
+button, input { font: inherit; }
+button { width: 36px; height: 36px; padding: 7px; border: 1px solid #ffffff35; border-radius: 4px; color: inherit; background: #172321df; cursor: pointer; display: grid; place-items: center; }
+button:hover { background: #385347; }
+button:focus-visible, input:focus-visible { outline: 2px solid #e9ce66; outline-offset: 2px; }
+svg { width: 20px; height: 20px; flex: none; }
+.toolbar { position: fixed; top: 16px; left: 20px; right: 20px; z-index: 10; display: flex; align-items: center; justify-content: space-between; gap: 12px; pointer-events: none; }
+.identity, .tools { display: flex; align-items: center; gap: 12px; pointer-events: auto; background: #172321df; padding: 6px 10px; border-radius: 4px; }
+.identity strong { font-family: 'Trebuchet MS', sans-serif; font-size: 20px; white-space: nowrap; }
+.identity > svg { color: #a9d780; }
+#host, #fps { color: #c4d1c8; font: 11px Consolas, monospace; white-space: nowrap; }
+.fly { display: flex; align-items: center; gap: 6px; font-size: 13px; }
+.fly input { accent-color: #b2d77d; width: 16px; height: 16px; }
+#console { position: fixed; z-index: 11; top: 76px; right: 20px; width: min(320px, calc(100% - 40px)); background: #172321f5; padding: 12px; border-radius: 4px; }
+#console label { display: block; font-size: 12px; margin-bottom: 8px; }
+.command-row { display: flex; gap: 6px; }
+#cmd-input { min-width: 0; width: 100%; color: inherit; background: #0e1513; border: 1px solid #82978a; border-radius: 3px; padding: 6px; }
+#crosshair { position: fixed; left: 50%; top: 50%; width: 14px; height: 14px; transform: translate(-50%, -50%); z-index: 5; pointer-events: none; }
+#crosshair::before, #crosshair::after { content: ''; position: absolute; background: #fff; box-shadow: 0 0 2px #000; }
+#crosshair::before { left: 6px; width: 2px; height: 14px; }
+#crosshair::after { top: 6px; height: 2px; width: 14px; }
+#hotbar { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); z-index: 10; display: grid; grid-template-columns: repeat(12, 48px); gap: 5px; padding: 7px; border-radius: 4px; background: #172321df; }
+#hotbar .slot { width: 48px; height: 52px; padding: 3px; position: relative; }
+.slot .swatch { width: 28px; height: 28px; image-rendering: pixelated; background-size: 112px 112px; }
+.slot kbd { position: absolute; top: 2px; left: 4px; font: 10px Consolas, monospace; text-shadow: 0 1px 2px #000; }
+.slot.active { border: 2px solid #f0d675; background: #587054; }
+#loading { position: fixed; bottom: 100px; left: 50%; transform: translateX(-50%); z-index: 12; display: flex; flex-direction: column; align-items: center; gap: 8px; width: 180px; padding: 10px; background: #172321df; border-radius: 4px; font-size: 12px; }
+.bar { height: 3px; width: 100%; background: #6c8071; }
+.bar-fill { height: 100%; background: #e9ce66; width: 0; }
+#error { position: fixed; left: 20px; right: 20px; top: 80px; z-index: 30; padding: 14px; color: #fff; background: #832f36; overflow-wrap: anywhere; }
+.touch-controls { display: none; }
+@media (max-width: 700px) {
+  .toolbar { top: 10px; left: 10px; right: 10px; align-items: flex-start; }
+  .identity { gap: 6px; padding: 10px 8px; }
+  .identity strong { font-size: 16px; }
+  #host, #fps { display: none; }
+  .tools { gap: 4px; padding: 4px; }
+  .tools button { width: 30px; height: 32px; padding: 5px; }
+  #hotbar { grid-template-columns: repeat(6, 42px); gap: 4px; bottom: 12px; }
+  #hotbar .slot { width: 42px; height: 42px; }
+  #loading { bottom: 220px; }
+  .touch-controls { position: fixed; z-index: 10; bottom: 122px; left: 50%; transform: translateX(-50%); display: flex; gap: 4px; }
+  .touch-controls button { touch-action: none; }
+}

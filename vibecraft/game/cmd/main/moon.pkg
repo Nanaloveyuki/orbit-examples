@@ -1,0 +1,7 @@
+import {
+  "Nanaloveyuki/orbit-vibecraft-game" @game,
+}
+
+supported_targets = "js"
+
+pkgtype(kind: "executable")

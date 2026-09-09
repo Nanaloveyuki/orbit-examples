@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Orbit Voxel</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <header class="toolbar">
+    <div class="identity"><i data-lucide="box"></i><strong>Orbit Voxel</strong><span id="host">Browser</span></div>
+    <div class="tools">
+      <span id="fps">-- FPS</span>
+      <label class="fly"><input type="checkbox" id="fly-toggle">Fly</label>
+      <button id="teleport-random" title="Random teleport" aria-label="Random teleport"><i data-lucide="shuffle"></i></button>
+      <button id="console-toggle" title="Command console" aria-label="Command console" aria-expanded="false"><i data-lucide="terminal"></i></button>
+    </div>
+  </header>
+  <form id="console" hidden>
+    <label for="cmd-input">Command</label>
+    <div class="command-row"><input id="cmd-input" autocomplete="off" spellcheck="false"><button id="cmd-run" type="button" title="Run command" aria-label="Run command"><i data-lucide="arrow-right"></i></button></div>
+  </form>
+  <div id="crosshair" aria-hidden="true"></div>
+  <div id="loading" role="status"><span class="loading-text">Loading 0%</span><div class="bar"><div class="bar-fill"></div></div></div>
+  <div id="error" role="alert" hidden></div>
+  <nav id="hotbar" aria-label="Blocks"></nav>
+  <div class="touch-controls" aria-label="Movement">
+    <button data-key="KeyW" title="Forward" aria-label="Forward"><i data-lucide="arrow-up"></i></button>
+    <button data-key="KeyA" title="Left" aria-label="Left"><i data-lucide="arrow-left"></i></button>
+    <button data-key="KeyS" title="Backward" aria-label="Backward"><i data-lucide="arrow-down"></i></button>
+    <button data-key="KeyD" title="Right" aria-label="Right"><i data-lucide="arrow-right"></i></button>
+    <button data-key="Space" title="Jump" aria-label="Jump"><i data-lucide="chevrons-up"></i></button>
+    <button data-click="0" title="Break block" aria-label="Break block"><i data-lucide="pickaxe"></i></button>
+    <button data-click="2" title="Place block" aria-label="Place block"><i data-lucide="plus"></i></button>
+  </div>
+</body>
+</html>
